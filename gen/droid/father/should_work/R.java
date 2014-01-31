@@ -138,68 +138,75 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int borderbottom=0x7f020003;
         public static final int bordertop=0x7f020004;
         public static final int bottom_border=0x7f020005;
-        public static final int eagle=0x7f020006;
-        public static final int edittext_rounded_corners=0x7f020007;
-        public static final int flamingo=0x7f020008;
-        public static final int heron=0x7f020009;
-        public static final int icon=0x7f02000a;
-        public static final int list_border=0x7f02000b;
-        public static final int octocat=0x7f02000c;
-        public static final int octocat_scaled=0x7f02000d;
-        public static final int ostrich=0x7f02000e;
-        public static final int peacock=0x7f02000f;
-        public static final int penguin=0x7f020010;
-        public static final int plus=0x7f020011;
-        public static final int rounded_corner=0x7f020012;
-        public static final int save_note=0x7f020013;
-        public static final int shadow=0x7f020014;
-        public static final int shadowright=0x7f020015;
-        public static final int toucan=0x7f020016;
-        public static final int turkey=0x7f020017;
-        public static final int vulture=0x7f020018;
+        public static final int coffee=0x7f020006;
+        public static final int coffee_1=0x7f020007;
+        public static final int coffee_2=0x7f020008;
+        public static final int coffee_3=0x7f020009;
+        public static final int donate=0x7f02000a;
+        public static final int eagle=0x7f02000b;
+        public static final int edittext_rounded_corners=0x7f02000c;
+        public static final int flamingo=0x7f02000d;
+        public static final int heron=0x7f02000e;
+        public static final int icon=0x7f02000f;
+        public static final int list_border=0x7f020010;
+        public static final int octocat=0x7f020011;
+        public static final int octocat_scaled=0x7f020012;
+        public static final int ostrich=0x7f020013;
+        public static final int peacock=0x7f020014;
+        public static final int penguin=0x7f020015;
+        public static final int plus=0x7f020016;
+        public static final int rounded_corner=0x7f020017;
+        public static final int save_note=0x7f020018;
+        public static final int shadow=0x7f020019;
+        public static final int shadowright=0x7f02001a;
+        public static final int toucan=0x7f02001b;
+        public static final int turkey=0x7f02001c;
+        public static final int vulture=0x7f02001d;
     }
     public static final class id {
+        public static final int action_donate=0x7f040030;
         public static final int action_settings=0x7f04002e;
-        public static final int add_note=0x7f04002d;
-        public static final int browseContacts=0x7f040017;
-        public static final int button1=0x7f040013;
-        public static final int button2=0x7f040014;
-        public static final int button3=0x7f040012;
-        public static final int checkBoxIn=0x7f040018;
-        public static final int checkBoxOut=0x7f040019;
-        public static final int contact=0x7f040016;
+        public static final int adView=0x7f040013;
+        public static final int add_note=0x7f04002f;
+        public static final int browseContacts=0x7f040018;
+        public static final int button1=0x7f040011;
+        public static final int button2=0x7f040015;
+        public static final int button3=0x7f040014;
+        public static final int checkBoxIn=0x7f040019;
+        public static final int checkBoxOut=0x7f04001a;
+        public static final int contact=0x7f040017;
         public static final int dismiss=0x7f040010;
-        public static final int dismissPopup=0x7f04002c;
+        public static final int dismissPopup=0x7f04002d;
         public static final int fullscreen=0x7f040003;
-        public static final int id=0x7f04002a;
+        public static final int id=0x7f04002b;
         public static final int imageView1=0x7f040005;
         public static final int imageView2=0x7f040009;
-        public static final int in=0x7f040020;
-        public static final int in_mod=0x7f040027;
+        public static final int in=0x7f040021;
+        public static final int in_mod=0x7f040028;
         public static final int left=0x7f040000;
-        public static final int main=0x7f040011;
+        public static final int main=0x7f040012;
         public static final int margin=0x7f040002;
-        public static final int menu=0x7f04001b;
-        public static final int modSave=0x7f040029;
-        public static final int modify=0x7f040022;
+        public static final int menu=0x7f04001c;
+        public static final int modSave=0x7f04002a;
+        public static final int modify=0x7f040023;
         public static final int note=0x7f04000f;
-        public static final int note_mod=0x7f040026;
-        public static final int out=0x7f040021;
-        public static final int out_mod=0x7f040028;
+        public static final int note_mod=0x7f040027;
+        public static final int out=0x7f040022;
+        public static final int out_mod=0x7f040029;
         public static final int relativeLayout1=0x7f04000d;
         public static final int right=0x7f040001;
-        public static final int saveNote=0x7f04001a;
-        public static final int scrollView1=0x7f040015;
+        public static final int saveNote=0x7f04001b;
+        public static final int scrollView1=0x7f040016;
         public static final int selected_view=0x7f040004;
-        public static final int show=0x7f04001c;
-        public static final int slidingmenumain=0x7f04002b;
+        public static final int show=0x7f04001d;
+        public static final int slidingmenumain=0x7f04002c;
         public static final int subject=0x7f04000e;
-        public static final int subject_mod=0x7f040024;
-        public static final int text1=0x7f04001d;
-        public static final int text2=0x7f04001e;
-        public static final int text3=0x7f040023;
-        public static final int text4=0x7f040025;
-        public static final int text5=0x7f04001f;
+        public static final int subject_mod=0x7f040025;
+        public static final int text1=0x7f04001e;
+        public static final int text2=0x7f04001f;
+        public static final int text3=0x7f040024;
+        public static final int text4=0x7f040026;
+        public static final int text5=0x7f040020;
         public static final int textView1=0x7f040007;
         public static final int textView2=0x7f040008;
         public static final int textView3=0x7f04000b;
@@ -210,21 +217,23 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
     public static final class layout {
         public static final int about_layout=0x7f030000;
         public static final int activity_dialog=0x7f030001;
-        public static final int activity_main=0x7f030002;
-        public static final int activity_note=0x7f030003;
-        public static final int add_note_layout=0x7f030004;
-        public static final int menu=0x7f030005;
-        public static final int menu_frame=0x7f030006;
-        public static final int one_note=0x7f030007;
-        public static final int row=0x7f030008;
-        public static final int show_notes=0x7f030009;
-        public static final int sliding_list_item=0x7f03000a;
-        public static final int slidingmenumain=0x7f03000b;
-        public static final int test=0x7f03000c;
+        public static final int activity_donate_dialog=0x7f030002;
+        public static final int activity_main=0x7f030003;
+        public static final int activity_note=0x7f030004;
+        public static final int add_note_layout=0x7f030005;
+        public static final int menu=0x7f030006;
+        public static final int menu_frame=0x7f030007;
+        public static final int one_note=0x7f030008;
+        public static final int row=0x7f030009;
+        public static final int show_notes=0x7f03000a;
+        public static final int sliding_list_item=0x7f03000b;
+        public static final int slidingmenumain=0x7f03000c;
+        public static final int test=0x7f03000d;
     }
     public static final class menu {
-        public static final int main=0x7f080000;
-        public static final int note=0x7f080001;
+        public static final int donate_dialog=0x7f080000;
+        public static final int main=0x7f080001;
+        public static final int note=0x7f080002;
     }
     public static final class string {
         public static final int MainActivity=0x7f060003;
@@ -232,6 +241,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int app_name=0x7f060000;
         public static final int hello_world=0x7f060002;
         public static final int preference_file_key=0x7f060005;
+        public static final int title_activity_donate_dialog=0x7f060006;
         public static final int title_activity_note=0x7f060004;
     }
     public static final class style {
@@ -324,7 +334,7 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name android:behindOffset
+          @attr name droid.father.should_work:behindOffset
         */
         public static final int SlidingMenu_behindOffset = 3;
         /**
@@ -338,7 +348,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name android:behindScrollScale
+          @attr name droid.father.should_work:behindScrollScale
         */
         public static final int SlidingMenu_behindScrollScale = 5;
         /**
@@ -354,7 +364,7 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name android:behindWidth
+          @attr name droid.father.should_work:behindWidth
         */
         public static final int SlidingMenu_behindWidth = 4;
         /**
@@ -368,7 +378,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name android:fadeDegree
+          @attr name droid.father.should_work:fadeDegree
         */
         public static final int SlidingMenu_fadeDegree = 11;
         /**
@@ -382,7 +392,7 @@ containing a value of this type.
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name android:fadeEnabled
+          @attr name droid.father.should_work:fadeEnabled
         */
         public static final int SlidingMenu_fadeEnabled = 10;
         /**
@@ -399,7 +409,7 @@ containing a value of this type.
 <tr><td><code>left</code></td><td>0</td><td></td></tr>
 <tr><td><code>right</code></td><td>1</td><td></td></tr>
 </table>
-          @attr name android:mode
+          @attr name droid.father.should_work:mode
         */
         public static final int SlidingMenu_mode = 0;
         /**
@@ -409,7 +419,7 @@ containing a value of this type.
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name android:selectorDrawable
+          @attr name droid.father.should_work:selectorDrawable
         */
         public static final int SlidingMenu_selectorDrawable = 13;
         /**
@@ -423,7 +433,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name android:selectorEnabled
+          @attr name droid.father.should_work:selectorEnabled
         */
         public static final int SlidingMenu_selectorEnabled = 12;
         /**
@@ -433,7 +443,7 @@ containing a value of this type.
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name android:shadowDrawable
+          @attr name droid.father.should_work:shadowDrawable
         */
         public static final int SlidingMenu_shadowDrawable = 8;
         /**
@@ -449,7 +459,7 @@ in (inches), mm (millimeters).
 theme attribute (in the form
 "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>")
 containing a value of this type.
-          @attr name android:shadowWidth
+          @attr name droid.father.should_work:shadowWidth
         */
         public static final int SlidingMenu_shadowWidth = 9;
         /**
@@ -466,7 +476,7 @@ containing a value of this type.
 <tr><td><code>margin</code></td><td>0</td><td></td></tr>
 <tr><td><code>fullscreen</code></td><td>1</td><td></td></tr>
 </table>
-          @attr name android:touchModeAbove
+          @attr name droid.father.should_work:touchModeAbove
         */
         public static final int SlidingMenu_touchModeAbove = 6;
         /**
@@ -483,7 +493,7 @@ containing a value of this type.
 <tr><td><code>margin</code></td><td>0</td><td></td></tr>
 <tr><td><code>fullscreen</code></td><td>1</td><td></td></tr>
 </table>
-          @attr name android:touchModeBehind
+          @attr name droid.father.should_work:touchModeBehind
         */
         public static final int SlidingMenu_touchModeBehind = 7;
         /**
@@ -493,7 +503,7 @@ containing a value of this type.
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name android:viewAbove
+          @attr name droid.father.should_work:viewAbove
         */
         public static final int SlidingMenu_viewAbove = 1;
         /**
@@ -503,7 +513,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 
           <p>Must be a reference to another resource, in the form "<code>@[+][<i>package</i>:]<i>type</i>:<i>name</i></code>"
 or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>name</i></code>".
-          @attr name android:viewBehind
+          @attr name droid.father.should_work:viewBehind
         */
         public static final int SlidingMenu_viewBehind = 2;
     };

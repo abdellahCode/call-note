@@ -7,5 +7,6 @@
     <string name="MainActivity">Add Note</string>
     <string name="title_activity_note">Note</string>
     <string name="preference_file_key">call_note_prefs</string>
+    <string name="title_activity_donate_dialog">DonateDialog</string>
 
 </resources>

@@ -11,22 +11,22 @@ import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.content.Context;
 import android.graphics.Point;
+import android.telephony.TelephonyManager;
+import android.util.Log;
 import android.view.ActionProvider;
 import android.view.Display;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MenuItem.OnMenuItemClickListener;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.ListView;
-import android.widget.ShareActionProvider;
 import android.widget.TextView;
-import android.widget.Toast;
+import com.google.ads.*;
 
 public class MainActivity extends Activity {
 
@@ -34,6 +34,9 @@ public class MainActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+		TelephonyManager telephonyManager1 = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
+	    String imei = telephonyManager1.getDeviceId();
+		Log.d("Call Note", "Device ID: " + imei);
 		SlidingMenu menu;
 		menu = new SlidingMenu(this);
 		menu.setMode(SlidingMenu.LEFT);
@@ -117,13 +120,28 @@ public class MainActivity extends Activity {
 			ft.add(R.id.main, addnote);
 			ft.commit();
 		}
+	
+		AdView av = (AdView) this.findViewById(R.id.adView);
+		av.loadAd(new AdRequest());
 	}
-	private ActionProvider ap;
+	private ActionProvider ap, donate;
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		 //Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.main, menu);
+		/*donate = (ActionProvider) menu.findItem(R.id.donate).getActionProvider();
+		menu.findItem(R.id.donate).setOnMenuItemClickListener(new OnMenuItemClickListener() {
+			@Override
+			public boolean onMenuItemClick(MenuItem item) {
+				// TODO Auto-generated method stub
+				//Toast.makeText(getApplicationContext(), "Add note clicked", Toast.LENGTH_SHORT).show();
+				Intent i = new Intent(getApplicationContext(), DonateDialog.class);
+				i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+				getApplicationContext().startActivity(i);
+				return true;
+			}
+		});*/
 		ap = (ActionProvider) menu.findItem(R.id.add_note).getActionProvider();
 		menu.findItem(R.id.add_note).setOnMenuItemClickListener(new OnMenuItemClickListener() {
 			@Override
@@ -138,6 +156,8 @@ public class MainActivity extends Activity {
 				return true;
 			}
 		});
+		
+		
 		
 		return true;
 	}

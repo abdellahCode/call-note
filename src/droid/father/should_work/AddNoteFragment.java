@@ -5,9 +5,12 @@ import droid.father.should_work.R;
 import android.app.Fragment;
 import android.content.Intent;
 import android.database.Cursor;
+import android.graphics.Point;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.ContactsContract;
+import android.util.Log;
+import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -22,6 +25,10 @@ public class AddNoteFragment extends Fragment {
 	String name=null, number=null;
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		Point size = new Point();
+		Display screen = getActivity().getWindowManager().getDefaultDisplay();
+		screen.getSize(size);
+		Log.d("Call Note", "the screen size: " + size.x + " --y: " + size.y);
 		AddNoteView = inflater.inflate(R.layout.add_note_layout, container, false);
 		return AddNoteView;
 
