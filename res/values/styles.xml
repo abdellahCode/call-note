@@ -42,4 +42,8 @@
        <item name="android:background">@drawable/add_note_dashboard_button</item>
        <item name="android:padding">10dip</item>
    </style>
+   
+   <style name="generalnotitle" parent="@android:style/Theme.Dialog">
+    <item name="android:windowNoTitle">true</item>
+</style>
 </resources>

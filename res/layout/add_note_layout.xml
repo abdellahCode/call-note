@@ -29,7 +29,7 @@
                     android:layout_height="wrap_content"
                     android:text="Subject"
                     android:textSize="15sp"
-                    android:textColor="@android:color/holo_blue_dark" />
+                    android:textColor="#0096FF" />
 
                 <EditText
                     android:id="@+id/subject"
@@ -47,7 +47,7 @@
                     android:layout_marginTop="5dp"
                     android:text="Note"
                     android:textSize="15sp"
-                    android:textColor="@android:color/holo_blue_dark" />
+                    android:textColor="#0096FF" />
 
                 <EditText
                     android:id="@+id/note"
@@ -65,17 +65,19 @@
                     android:layout_marginTop="5dp"
                     android:text="Contact"
                     android:textSize="15sp"
-                    android:textColor="@android:color/holo_blue_dark" />
+                    android:textColor="#0096FF" />
 
-                <EditText
+                <AutoCompleteTextView
                     android:id="@+id/contact"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:completionThreshold="1"
                     android:background="@drawable/edittext_rounded_corners"
                     android:ems="10"
-                    android:inputType="phone"
+                    android:inputType="text"
                     android:textSize="13sp" >
-                </EditText>
+                    
+                </AutoCompleteTextView>
 
                 <Button
                     android:id="@+id/browseContacts"
@@ -93,7 +95,7 @@
                     android:layout_marginTop="5dp"
                     android:textSize="14sp"
                     android:text="Show note when call is: "
-                     android:textColor="@android:color/holo_blue_dark" />
+                    android:textColor="#0096FF" />
 
                 <LinearLayout
                     android:layout_width="fill_parent"

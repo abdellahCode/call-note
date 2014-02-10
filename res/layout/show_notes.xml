@@ -15,7 +15,7 @@
     </ListView>
     <TextView 
         android:id="@android:id/empty"
-        android:text="No Notes to display"
+        android:text="No notes to display, press the + button on top or press the menu button"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"/>
 
