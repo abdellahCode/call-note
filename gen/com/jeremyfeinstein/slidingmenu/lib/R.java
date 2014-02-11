@@ -26,17 +26,17 @@ public final class R {
 	public static final class drawable {
 		public static final int eagle = 0x7f020006;
 		public static final int flamingo = 0x7f020008;
-		public static final int heron = 0x7f020009;
-		public static final int octocat = 0x7f02000d;
-		public static final int octocat_scaled = 0x7f02000e;
-		public static final int ostrich = 0x7f02000f;
-		public static final int peacock = 0x7f020010;
-		public static final int penguin = 0x7f020011;
-		public static final int shadow = 0x7f020015;
-		public static final int shadowright = 0x7f020016;
-		public static final int toucan = 0x7f020017;
-		public static final int turkey = 0x7f020018;
-		public static final int vulture = 0x7f020019;
+		public static final int heron = 0x7f02000a;
+		public static final int octocat = 0x7f02000e;
+		public static final int octocat_scaled = 0x7f02000f;
+		public static final int ostrich = 0x7f020010;
+		public static final int peacock = 0x7f020011;
+		public static final int penguin = 0x7f020012;
+		public static final int shadow = 0x7f020016;
+		public static final int shadowright = 0x7f020017;
+		public static final int toucan = 0x7f020018;
+		public static final int turkey = 0x7f020019;
+		public static final int vulture = 0x7f02001a;
 	}
 	public static final class id {
 		public static final int fullscreen = 0x7f040003;

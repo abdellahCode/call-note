@@ -104,7 +104,7 @@ public class MainActivity extends FragmentActivity {
 					}
 				}
 			});
-			
+
 			FragmentManager fm = getSupportFragmentManager();
 			FragmentTransaction ft = fm.beginTransaction();
 			Fragment addnote = new ShowNotesFragment();
@@ -121,26 +121,41 @@ public class MainActivity extends FragmentActivity {
 				ft.add(R.id.main, addnote);
 				ft.commit();
 			}
-			
+
 			AdView av = (AdView) this.findViewById(R.id.adView);
 			av.loadAd(new AdRequest());
 		}catch(Exception e){
 			Log.d("callnote", e.getMessage());
 		}
 	}
-	private ActionProvider ap;
+	private ActionProvider ap, hp;
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		getMenuInflater().inflate(R.menu.main, menu);
 		menu.findItem(R.id.add_note).setOnMenuItemClickListener(new OnMenuItemClickListener() {
 			@Override
 			public boolean onMenuItemClick(MenuItem item) {
-				Fragment f = new AddNoteFragment();
+					Fragment f = new AddNoteFragment();
+					FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+					ft.replace(R.id.main, f);
+					ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+					ft.commit();
+				
+				return true;
+			}
+		});
+		menu.findItem(R.id.help).setOnMenuItemClickListener(new OnMenuItemClickListener() {
+			
+			@Override
+			public boolean onMenuItemClick(MenuItem item) {
+				// TODO Auto-generated method stub
+				Fragment f = new AboutFragment();
 				FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
 				ft.replace(R.id.main, f);
 				ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
 				ft.commit();
-				return true;
+			
+				return false;
 			}
 		});
 		if(android.os.Build.VERSION.SDK_INT > 13){
@@ -149,6 +164,18 @@ public class MainActivity extends FragmentActivity {
 				@Override
 				public boolean onMenuItemClick(MenuItem item) {
 					Fragment f = new AddNoteFragment();
+					FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+					ft.replace(R.id.main, f);
+					ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
+					ft.commit();
+					return true;
+				}
+			});
+			hp = (ActionProvider) menu.findItem(R.id.help).getActionProvider();
+			menu.findItem(R.id.help).setOnMenuItemClickListener(new OnMenuItemClickListener() {
+				@Override
+				public boolean onMenuItemClick(MenuItem item) {
+					Fragment f = new AboutFragment();
 					FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
 					ft.replace(R.id.main, f);
 					ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);

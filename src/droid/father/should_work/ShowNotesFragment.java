@@ -11,6 +11,7 @@ import android.support.v4.app.ListFragment;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
+import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.support.v4.widget.SimpleCursorAdapter;
@@ -43,12 +44,18 @@ public class ShowNotesFragment extends ListFragment {
 		}
 		return ShowNotesView;	  
 	}
-
+	@Override
 	public void onResume(){
 		super.onResume();
 		try{
 			final ListView lv = getListView();
 			lv.setOnTouchListener(swipeDetector);
+			db = new Database(getActivity().getApplicationContext());
+			Cursor c = db.getNotes();
+			ListAdapter listadapter = new mycursoradapter(getActivity(), R.layout.row, c, new String[] {"subject", "contact", "note"},
+					new int[] {R.id.subject, R.id.contact, R.id.note});
+			setListAdapter(listadapter);
+			
 		}catch(Exception e){
 			Log.d("callnote", e.getMessage());
 		}
@@ -91,15 +98,10 @@ public class ShowNotesFragment extends ListFragment {
 				dialog.show();
 			}
 			else if (swipeDetector.swipeDetected() != Action.LR && swipeDetector.swipeDetected() != Action.RL){
-				//Toast.makeText(getActivity(), "Clicked", Toast.LENGTH_SHORT).show();
-				Bundle b = new Bundle();
-				b.putString("id", ""+id);
-				OneNoteFragment onenotefragment = new OneNoteFragment();
-				onenotefragment.setArguments(b); 
-				FragmentTransaction ft = getFragmentManager().beginTransaction();
-				ft.replace(R.id.main, onenotefragment);
-				ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
-				ft.commit();
+				Intent onenoteIntent = new Intent(getActivity(), OneNote.class);
+				onenoteIntent.putExtra("id", id); 
+				Log.d("call note", "The ID to be passed: " + id);
+				getActivity().startActivity(onenoteIntent);
 			}
 		}catch(Exception e){
 			Log.d("callnote", e.getMessage());

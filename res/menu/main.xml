@@ -15,5 +15,12 @@
         android:showAsAction="always"
         android:title="Add Note"
         android:visible="true"/>
+    <item
+        android:id="@+id/help"
+        android:enabled="true"
+        android:icon="@drawable/help"
+        android:showAsAction="always"
+        android:title="Help"
+        android:visible="true"/>
 
 </menu>

@@ -3,6 +3,7 @@ package droid.father.should_work;
 import droid.father.should_work.R;
 
 
+import android.app.Activity;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -17,21 +18,22 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-public class OneNoteFragment extends Fragment{
+public class OneNote extends Activity{
 
-	View ShowNoteView;
-	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+
+	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		setContentView(R.layout.one_note);
 		try{
-			final String id = getArguments().getString("id");
-			final Database db = new Database(getActivity().getApplicationContext());
+			Bundle b = getIntent().getExtras();
+			final long id = b.getLong("id");
+			final Database db = new Database(getApplicationContext());
 			final Cursor c = db.getNotesByID(id);
 			Log.i("callnote", "the id: "+id);
 			c.moveToFirst();
-			ShowNoteView = inflater.inflate(R.layout.one_note, container, false);
-			TextView subject =  (TextView) ShowNoteView.findViewById(R.id.subject);
+			TextView subject =  (TextView) findViewById(R.id.subject);
 			subject.setText(c.getString(c.getColumnIndex("subject")));
-			TextView contact =  (TextView) ShowNoteView.findViewById(R.id.contact);
+			TextView contact =  (TextView) findViewById(R.id.contact);
 			if(c.getString(c.getColumnIndex("contact_name")) != null)
 			{
 				contact.setText(c.getString(c.getColumnIndex("contact_name")));
@@ -39,10 +41,10 @@ public class OneNoteFragment extends Fragment{
 			else{
 				contact.setText(c.getString(c.getColumnIndex("contact")));
 			}
-			TextView note =  (TextView) ShowNoteView.findViewById(R.id.note);
+			TextView note =  (TextView) findViewById(R.id.note);
 			note.setText(c.getString(c.getColumnIndex("note")));
-			TextView in =  (TextView) ShowNoteView.findViewById(R.id.in);
-			TextView out =  (TextView) ShowNoteView.findViewById(R.id.out);
+			TextView in =  (TextView) findViewById(R.id.in);
+			TextView out =  (TextView) findViewById(R.id.out);
 			if(c.getString(c.getColumnIndex("incoming")).equals("0"))
 				in.setVisibility(View.GONE);
 			else
@@ -52,7 +54,7 @@ public class OneNoteFragment extends Fragment{
 			else 
 				out.setVisibility(View.VISIBLE);
 
-			final Button modSave = (Button) ShowNoteView.findViewById(R.id.modSave);
+			final Button modSave = (Button) findViewById(R.id.modSave);
 			modSave.setOnClickListener(new OnClickListener() {
 
 				@Override
@@ -61,16 +63,16 @@ public class OneNoteFragment extends Fragment{
 					EditText subject = null, note = null;
 					if(modSave.getText().equals("Modify")){
 						modSave.setText("Save");
-						LinearLayout show = (LinearLayout) ShowNoteView.findViewById(R.id.show);
+						LinearLayout show = (LinearLayout) findViewById(R.id.show);
 						show.setVisibility(View.GONE);
-						LinearLayout modify = (LinearLayout) ShowNoteView.findViewById(R.id.modify);
+						LinearLayout modify = (LinearLayout) findViewById(R.id.modify);
 						modify.setVisibility(View.VISIBLE);
-						subject =  (EditText) ShowNoteView.findViewById(R.id.subject_mod);
+						subject =  (EditText) findViewById(R.id.subject_mod);
 						subject.setText(c.getString(c.getColumnIndex("subject")));
-						note =  (EditText) ShowNoteView.findViewById(R.id.note_mod);
+						note =  (EditText) findViewById(R.id.note_mod);
 						note.setText(c.getString(c.getColumnIndex("note")));
-						CheckBox in =  (CheckBox) ShowNoteView.findViewById(R.id.in_mod);
-						CheckBox out =  (CheckBox) ShowNoteView.findViewById(R.id.out_mod);
+						CheckBox in =  (CheckBox) findViewById(R.id.in_mod);
+						CheckBox out =  (CheckBox) findViewById(R.id.out_mod);
 						if(c.getString(c.getColumnIndex("incoming")).equals("1"))
 							in.setChecked(true);
 						if(c.getString(c.getColumnIndex("outgoing")).equals("1"))
@@ -78,15 +80,15 @@ public class OneNoteFragment extends Fragment{
 					}
 					else if(modSave.getText().equals("Save")){
 						modSave.setText("Modify");
-						LinearLayout show = (LinearLayout) ShowNoteView.findViewById(R.id.show);
+						LinearLayout show = (LinearLayout) findViewById(R.id.show);
 						show.setVisibility(View.VISIBLE);
-						LinearLayout modify = (LinearLayout) ShowNoteView.findViewById(R.id.modify);
+						LinearLayout modify = (LinearLayout) findViewById(R.id.modify);
 						modify.setVisibility(View.GONE);
-						subject =  (EditText) ShowNoteView.findViewById(R.id.subject_mod);
-						note =  (EditText) ShowNoteView.findViewById(R.id.note_mod);
+						subject =  (EditText) findViewById(R.id.subject_mod);
+						note =  (EditText) findViewById(R.id.note_mod);
 						String in_m = "0", out_m ="0";
-						CheckBox cbIn = (CheckBox)ShowNoteView.findViewById(R.id.in_mod);
-						CheckBox cbOut = (CheckBox)ShowNoteView.findViewById(R.id.out_mod);
+						CheckBox cbIn = (CheckBox) findViewById(R.id.in_mod);
+						CheckBox cbOut = (CheckBox) findViewById(R.id.out_mod);
 						if(cbIn.isChecked())
 							in_m = "1";
 						if(cbOut.isChecked())
@@ -95,17 +97,17 @@ public class OneNoteFragment extends Fragment{
 						final Cursor c = db.getNotesByID(id);
 						Log.i("callnote", "the id: "+id);
 						c.moveToFirst();
-						TextView subject_m =  (TextView) ShowNoteView.findViewById(R.id.subject);
+						TextView subject_m =  (TextView) findViewById(R.id.subject);
 						subject_m.setText(c.getString(c.getColumnIndex("subject")));
-						TextView contact =  (TextView) ShowNoteView.findViewById(R.id.contact);
+						TextView contact =  (TextView) findViewById(R.id.contact);
 						if(c.getString(c.getColumnIndex("contact_name")) == null)
 							contact.setText(c.getString(c.getColumnIndex("contact")));
 						else
 							contact.setText(c.getString(c.getColumnIndex("contact_name")));
-						TextView note_m =  (TextView) ShowNoteView.findViewById(R.id.note);
+						TextView note_m =  (TextView) findViewById(R.id.note);
 						note_m.setText(c.getString(c.getColumnIndex("note")));
-						TextView in =  (TextView) ShowNoteView.findViewById(R.id.in);
-						TextView out =  (TextView) ShowNoteView.findViewById(R.id.out);
+						TextView in =  (TextView) findViewById(R.id.in);
+						TextView out =  (TextView) findViewById(R.id.out);
 						if(c.getString(c.getColumnIndex("incoming")).equals("0"))
 							in.setVisibility(View.GONE);
 						if(c.getString(c.getColumnIndex("outgoing")).equals("0"))
@@ -116,6 +118,5 @@ public class OneNoteFragment extends Fragment{
 		}catch(Exception e){
 			Log.d("callnote", e.getMessage());
 		}
-		return ShowNoteView;
 	}
 }
