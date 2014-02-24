@@ -54,7 +54,7 @@ public class PhoneService extends BroadcastReceiver {
 			}
 			db.close();
 		}catch(Exception e){
-			Log.d("callnote", e.getMessage());
+			Log.e("callnote", "-> "+e.getMessage());
 		}
 	}
 }

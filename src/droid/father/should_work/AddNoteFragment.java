@@ -10,6 +10,7 @@ import droid.father.should_work.R;
 import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.provider.ContactsContract.Contacts;
@@ -41,8 +42,14 @@ public class AddNoteFragment extends Fragment {
 		return AddNoteView;
 
 	}
+
+
 	public void onActivityCreated(Bundle savedInstanceState) {
 		super.onActivityCreated(savedInstanceState);
+
+	}
+	public void onResume(){
+		super.onResume();
 		try{
 			final EditText subject = (EditText) AddNoteView.findViewById(R.id.subject);
 			final EditText note = (EditText) AddNoteView.findViewById(R.id.note);
@@ -50,8 +57,16 @@ public class AddNoteFragment extends Fragment {
 			Button AddNoteButton = (Button) AddNoteView.findViewById(R.id.saveNote);
 			mPeopleList = new ArrayList<Map<String, String>>();
 			mTxtPhoneNo = (AutoCompleteTextView) getActivity().findViewById(R.id.contact);
-
+			//			new AsyncTask<String, String, String>(){
+			//
+			//				@Override
+			//				protected String doInBackground(String... params) {
+			// TODO Auto-generated method stub
 			PopulatePeopleList();
+			//					return null;
+			//				}
+			//			}.execute("");
+
 
 
 			mAdapter = new SimpleAdapter(getActivity(), mPeopleList, R.layout.autocompleterow ,new String[] { "Name", "Phone"}, new int[] { R.id.cname, R.id.cnumber });
@@ -121,7 +136,7 @@ public class AddNoteFragment extends Fragment {
 				}});
 
 		}catch(Exception e){
-			Log.d("callnote", e.getMessage());
+			Log.e("callnote", "-> "+e.getMessage());
 		}
 	}
 
@@ -135,10 +150,11 @@ public class AddNoteFragment extends Fragment {
 				if(resultCode != 0){
 					Uri contactData = data.getData();
 					Cursor cursor =  getActivity().managedQuery(contactData, null, null, null, null);
+					//Cursor cursor =  (Cursor) getActivity().getLoaderManager().;
 					cursor.moveToFirst();
-					name = cursor.getString(cursor.getColumnIndexOrThrow(ContactsContract.Contacts.DISPLAY_NAME));
+					name = cursor.getString(cursor.getColumnIndex(ContactsContract.Contacts.DISPLAY_NAME));
 
-					number = cursor.getString(cursor.getColumnIndexOrThrow(ContactsContract.CommonDataKinds.Phone.NUMBER));
+					number = cursor.getString(cursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER));
 					EditText contact = (EditText) AddNoteView.findViewById(R.id.contact);
 					if(name==null)
 					{
@@ -152,7 +168,7 @@ public class AddNoteFragment extends Fragment {
 				}
 			}		     
 		}catch(Exception e){
-			Log.d("callnote", e.getMessage());
+			Log.e("callnote", "-> "+e.getMessage());
 		}
 
 
@@ -188,15 +204,11 @@ public class AddNoteFragment extends Fragment {
 						String phoneNumber = phones.getString(
 								phones.getColumnIndex(
 										ContactsContract.CommonDataKinds.Phone.NUMBER));
-
 						String numberType = phones.getString(phones.getColumnIndex(
 								ContactsContract.CommonDataKinds.Phone.TYPE));
-
 						Map<String, String> NamePhoneType = new HashMap<String, String>();
-
 						NamePhoneType.put("Name", contactName);
 						NamePhoneType.put("Phone", phoneNumber);
-
 						if(numberType.equals("0"))
 							NamePhoneType.put("Type", "Work");
 						else
@@ -213,11 +225,11 @@ public class AddNoteFragment extends Fragment {
 					phones.close();
 				}
 			}
-			people.close();
+			//people.close();
 
 			getActivity().startManagingCursor(people);
 		}catch(Exception e){
-			Log.d("callnote", e.getMessage());
+				Log.e("callnote", "-> "+e.getMessage());
 		}
 
 	}

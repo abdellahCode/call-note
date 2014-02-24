@@ -125,7 +125,7 @@ public class MainActivity extends FragmentActivity {
 			AdView av = (AdView) this.findViewById(R.id.adView);
 			av.loadAd(new AdRequest());
 		}catch(Exception e){
-			Log.d("callnote", e.getMessage());
+			Log.e("callnote", "-> "+e.getMessage());
 		}
 	}
 	private ActionProvider ap, hp;

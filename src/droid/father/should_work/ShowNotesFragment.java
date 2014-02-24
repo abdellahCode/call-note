@@ -40,7 +40,7 @@ public class ShowNotesFragment extends ListFragment {
 			ShowNotesView = inflater.inflate(R.layout.show_notes, container, false);
 
 		}catch(Exception e){
-			Log.d("callnote", e.getMessage());
+			Log.e("callnote", "-> "+e.getMessage());
 		}
 		return ShowNotesView;	  
 	}
@@ -57,7 +57,7 @@ public class ShowNotesFragment extends ListFragment {
 			setListAdapter(listadapter);
 			
 		}catch(Exception e){
-			Log.d("callnote", e.getMessage());
+			Log.e("callnote", "-> "+e.getMessage());
 		}
 	}
 
@@ -104,7 +104,7 @@ public class ShowNotesFragment extends ListFragment {
 				getActivity().startActivity(onenoteIntent);
 			}
 		}catch(Exception e){
-			Log.d("callnote", e.getMessage());
+			Log.e("callnote", "-> "+e.getMessage());
 		}
 	}
 }
@@ -168,7 +168,7 @@ class mycursoradapter extends SimpleCursorAdapter{
 				holder.contact.setText(cursor.getString(cursor.getColumnIndex("contact_name")));
 			}
 		}catch(Exception e){
-			Log.d("callnote", e.getMessage());
+			Log.e("callnote", "-> "+e.getMessage());
 		}
 	}
 }

@@ -51,7 +51,7 @@ public class OutgoingService extends BroadcastReceiver {
 				}
 			}
 		}catch(Exception e){
-			Log.d("callnote", e.getMessage());
+			Log.e("callnote", "-> "+e.getMessage());
 		}
 
 	}
