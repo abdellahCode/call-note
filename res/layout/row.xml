@@ -28,6 +28,8 @@
             android:layout_width="124dp"
             android:layout_height="wrap_content"
             android:text="Contact"
+            android:ellipsize="marquee"
+            android:singleLine="true"
             android:textAlignment="center"
             android:textColor="#161E1F" 
             android:textAppearance="?android:attr/textAppearanceLarge"

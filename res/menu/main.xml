@@ -1,12 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android" >
 
+    <!-- <item
+        android:id="@+id/donate"
+        android:enabled="true"
+        android:icon="@drawable/donate"
+        android:showAsAction="always"
+        android:title="Donate"
+        android:visible="true"/> -->
     <item
         android:id="@+id/add_note"
         android:enabled="true"
         android:icon="@drawable/plus"
         android:showAsAction="always"
         android:title="Add Note"
+        android:visible="true"/>
+    <item
+        android:id="@+id/help"
+        android:enabled="true"
+        android:icon="@drawable/help"
+        android:showAsAction="always"
+        android:title="Help"
         android:visible="true"/>
 
 </menu>
